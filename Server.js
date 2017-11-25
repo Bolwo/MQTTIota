@@ -1,6 +1,5 @@
 MQTTConnect();
 
-
 function MQTTConnect() {
     // Create a client instance: Broker, Port, Websocket Path, Client ID
     client = new Paho.MQTT.Client("iot.eclipse.org", Number(80), "/ws", "2");
@@ -16,8 +15,9 @@ function MQTTConnect() {
 
     // Called when the connection is made
     function onConnect(){
-        console.log("Connected!");
-        client.subscribe("/IotaTransaction")
+        client.subscribe("/IotaTransaction");
+        var div = document.getElementById("log");
+        div.innerHTML += "Connected!" + "<br />" + "<br />";
     }
 
     // Connect the client, providing an onConnect callback
@@ -28,10 +28,11 @@ function MQTTConnect() {
 }
 
 client.onMessageArrived = function (message) {
-  console.log("Message Arrived: " + message.payloadString);
-  console.log("Topic:     " + message.destinationName);
-  console.log("QoS:       " + message.qos);
-  console.log("Retained:  " + message.retained);
+  var div = document.getElementById("log");
+  div.innerHTML += "Message Arrived: " + message.payloadString + "<br />";
+  div.innerHTML += "Topic:     " + message.destinationName + "<br />";
+  div.innerHTML += "QoS:       " + message.qos + "<br />";
+  div.innerHTML += "Retained:  " + message.retained + "<br />";
   // Read Only, set if message might be a duplicate sent from broker
-  console.log("Duplicate: " + message.duplicate);
+  div.innerHTML += "Duplicate: " + message.duplicate + "<br />" + "<br />";
 }

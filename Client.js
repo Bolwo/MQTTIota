@@ -28,6 +28,10 @@ function MQTTConnect() {
     });
 }
 
+function SendMessage() {
+    PublishMessage();
+}
+
 function PublishMessage(){
     // Publish a Message
     var message = new Paho.MQTT.Message("Test payload, identifier here");
