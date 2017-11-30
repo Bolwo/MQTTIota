@@ -1,0 +1,34 @@
+{
+  "name": "mqttiota",
+  "version": "1.0.0",
+  "description": "Prototype MQTT and Iota coupling data transfer",
+  "main": "start.js",
+  "scripts": {
+    "build-css": "stylus source\\stylesheets\\index.styl -o static\\css",
+    "watch-css": "stylus source\\stylesheets\\index.styl -o static\\css -w",
+    "clean": "rm -rf static\\css && mkdir -p static\\css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bolwo/mqttiota.git"
+  },
+  "keywords": [
+    "mqtt"
+  ],
+  "author": "Bolwo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bolwo/mqttiota/issues"
+  },
+  "homepage": "https://github.com/bolwo/mqttiota#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "stylus": "^0.54.5"
+  }
+}
