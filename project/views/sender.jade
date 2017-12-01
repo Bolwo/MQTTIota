@@ -1,9 +1,11 @@
-extends layout
 
-var iota = require()
+extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  div Welcome to #{title}
   #log test
 
+  button(onclick='SendMessage()') Send Message
+
+  

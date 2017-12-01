@@ -4,6 +4,10 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+    script(src="/javascripts/paho.javascript-1.0.3/paho-mqtt.js")
+    script(src="/javascripts/sender.js")
+    script(src="/javascripts/receiver.js")
+
   body
     header
       nav
@@ -12,7 +16,5 @@ html
             a(href="/") Home
           li 
             a(href="/sender") Sender
-          li 
-            a(href="/receiver") Receiver
     section#wrapper
         block content

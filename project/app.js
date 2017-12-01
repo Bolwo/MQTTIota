@@ -8,7 +8,6 @@ var stylus = require('stylus');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var users = require('./routes/receiver');
 var users = require('./routes/sender');
 
 var app = express();
